@@ -11,7 +11,8 @@ module.exports = function() {
     var bower = {
         json: require('./bower.json'),
         directory: './bower_components/',
-        ignorePath: '../..'
+        ignorePath: '../..',
+        exclude: ["bower_components/masonry", "bower_components/outlayer", "bower_components/doc-ready", "bower_components/fizzy-ui-utils", "bower_components/get-style-property", "bower_components/get-size", "bower_components/matches-selector", "bower_components/eventEmitter", "bower_components/eventie"]
     };
     var nodeModules = 'node_modules';
 
@@ -132,7 +133,8 @@ module.exports = function() {
         var options = {
             bowerJson: config.bower.json,
             directory: config.bower.directory,
-            ignorePath: config.bower.ignorePath
+            ignorePath: config.bower.ignorePath,
+            exclude: config.bower.exclude
         };
         return options;
     };

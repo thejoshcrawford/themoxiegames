@@ -13,8 +13,8 @@
     }
 
     var config = {
-        appErrorPrefix: '[crossfitCompetitionLeaderboard Error] ',
-        appTitle: 'crossfitCompetitionLeaderboard'
+        appErrorPrefix: '[Error] ',
+        appTitle: 'The Moxie Games'
     };
 
     core.value('config', config);

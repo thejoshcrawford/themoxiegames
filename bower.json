@@ -1,9 +1,9 @@
 {
-    "name": "crossfitCompetitionLeaderboard",
+    "name": "the-moxie-games",
     "version": "0.0.1",
-    "description": "crossfitCompetitionLeaderboard",
+    "description": "The Moxie Games",
     "authors": [],
-    "license": "MIT",
+    "license": "",
     "ignore": [
         "**/.*",
         "node_modules",

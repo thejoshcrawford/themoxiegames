@@ -1,6 +1,6 @@
 {
-  "name": "crossfitCompetitionLeaderboard",
-  "description": "crossfitCompetitionLeaderboard Project Generated from HotTowel Angular",
+  "name": "the-moxie-games",
+  "description": "The Moxie Games Project",
   "version": "0.0.0",
   "scripts": {
     "init": "npm install",

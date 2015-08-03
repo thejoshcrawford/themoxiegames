@@ -1,4 +1,4 @@
-# crossfitCompetitionLeaderboard
+# The Moxie Games
 
 **Generated from HotTowel Angular**
 

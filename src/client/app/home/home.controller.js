@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('app.dashboard')
-        .controller('DashboardController', DashboardController);
+        .module('app.home')
+        .controller('HomeController', HomeController);
 
-    DashboardController.$inject = ['$q', 'dataservice', 'logger'];
+    HomeController.$inject = ['$q', 'dataservice', 'logger'];
     /* @ngInject */
-    function DashboardController($q, dataservice, logger) {
+    function HomeController($q, dataservice, logger) {
         var vm = this;
         vm.news = {
             title: 'The Moxie Games',
@@ -15,14 +15,14 @@
         };
         vm.messageCount = 0;
         vm.people = [];
-        vm.title = 'Dashboard';
+        vm.title = 'Home';
 
         activate();
 
         function activate() {
             var promises = [getMessageCount(), getPeople()];
             return $q.all(promises).then(function() {
-                logger.info('Activated Dashboard View');
+                logger.info('Activated Home View');
             });
         }
 

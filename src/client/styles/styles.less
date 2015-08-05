@@ -153,14 +153,18 @@ blockquote {
 	z-index: 2;
 }
 .subfooter {
-	background-color: #fafafa;
-	border-top: 1px solid #f3f3f3;
-	border-bottom: 1px solid #f3f3f3;
-	padding: 40px 0;
+	background-color: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+  padding: 40px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .section {
 	background-color: #ffffff;
 	padding: 80px 0;
+  min-height: 100vh;
 }
 
 /* Backgrounds
@@ -289,6 +293,35 @@ blockquote {
 .banner-caption h1 {
 	font-size: 60px;
 }
+
+.footer:before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  z-index: -1;
+  opacity: .9;
+  background: url("/images/flower-bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.footer{
+  color: #ECECEC;
+  position: relative;
+  h1 {
+    color: #ECECEC;
+  }
+}
+
+.footer.section{
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
 .subfooter p {
 	margin-bottom: 0;
 }
@@ -404,6 +437,45 @@ blockquote {
 
 /* Forms
 ---------------------------------- */
+
+.tsc-transition(@properties) {
+  transition-property: @properties;
+  transition-duration: @tmg-transition-duration;
+  transition-timing-function: @tmg-transition-timing-function;
+}
+
+////////////////////////////
+// TSC Variables
+
+@tmg-brand-primary: #365063;
+@tmg-brand-accent: spin(@tmg-brand-primary, -60);
+@tmg-brand-attention: hsv(hue(spin(@tmg-brand-accent, 235)), 0.8, 0.9);
+
+@tmg-transition-timing-function: cubic-bezier(0.4, 0.9, 0.5, 1);
+@tmg-transition-duration: 0.2s;
+
+.form-control {
+  .tsc-transition(color, box-shadow;);
+  color: #555;
+  background: fade(@tmg-brand-accent, 10);
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  resize: vertical;
+  &.is-dirty {
+    box-shadow: inset 2px 0 0 0 @tmg-brand-attention;
+    &:not(:focus):not(.is-valid) {
+      color: @tmg-brand-attention;
+    }
+    &.is-valid {
+      box-shadow: inset 2px 0 0 0 yellowgreen;
+    }
+  }
+  &:focus {
+    box-shadow: inset 2px 0 0 0 fade(#000, 30);
+  }
+}
+
 .form-control {
 	height: 45px;
 	-webkit-border-radius: 0px;
@@ -419,6 +491,7 @@ blockquote {
 textarea {
 	resize: vertical;
 }
+
 
 /* Modals
 ---------------------------------- */
@@ -591,7 +664,7 @@ textarea {
 	font-size: 36px;
 }
 .social-links li a {
-	color: #333333;
+	color: #ECECEC;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;

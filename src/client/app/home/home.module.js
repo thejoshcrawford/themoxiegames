@@ -4,6 +4,7 @@
     angular.module('app.home', [
         'app.core',
         'app.widgets',
-        'backstretch'
+        'backstretch',
+        'paypalButton'
       ]);
 })();

@@ -71,9 +71,18 @@
 				
 				<!-- Logged Out or Not Paid -->
 				<div class="registration" ng-hide="$kinvey.getActiveUser().payments.length > 0">
-				<div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+				<div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 		
 					<h1 class="page-header">Register</h1>
+					
+					
+						<div class="btn-group" role="group" aria-label="...">
+							<button type="button" class="btn btn-default">Individual RX $50</button>
+							<button type="button" class="btn btn-default">Masters (50+) $50</button>
+							<button type="button" class="btn btn-default">Team (3) $130</button>
+							<button type="button" class="btn btn-default">Kids Expo $10</button>
+						</div>
+					
 		
 					<form class="application-form"
 						name="applicationForm"
@@ -81,7 +90,7 @@
 						id="application-form"
 						ng-submit="submitPayment()">
 					<!-- Personal Info -->
-					<label>Attendee</label>
+					<label>Athlete</label>
 		
 					<div class="row">
 						<div class="col-xs-6">

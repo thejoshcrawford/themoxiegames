@@ -337,7 +337,6 @@ blockquote {
 	min-width: 160px;
 	text-align: center;
 	border-radius: 0;
-	text-transform: uppercase;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-ms-transition: all 0.2s ease-in-out;
@@ -450,6 +449,7 @@ blockquote {
 @tmg-brand-primary: #365063;
 @tmg-brand-accent: spin(@tmg-brand-primary, -60);
 @tmg-brand-attention: hsv(hue(spin(@tmg-brand-accent, 235)), 0.8, 0.9);
+@tmg-placeholder: #777  ;
 
 @tmg-transition-timing-function: cubic-bezier(0.4, 0.9, 0.5, 1);
 @tmg-transition-duration: 0.2s;
@@ -457,7 +457,7 @@ blockquote {
 .form-control {
   .tsc-transition(color, box-shadow;);
   color: #555;
-  background: fade(@tmg-brand-accent, 10);
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   border: none;
   border-radius: 0;
@@ -474,6 +474,22 @@ blockquote {
   &:focus {
     box-shadow: inset 2px 0 0 0 fade(#000, 30);
   }
+}
+
+.form-control::-webkit-input-placeholder {
+   color: @tmg-placeholder;
+}
+
+.form-control:-moz-placeholder { /* Firefox 18- */
+   color: @tmg-placeholder;  
+}
+
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: @tmg-placeholder;  
+}
+
+.form-control:-ms-input-placeholder {  
+   color: @tmg-placeholder;  
 }
 
 .form-control {
@@ -713,7 +729,6 @@ textarea {
 	margin-left: 2px;
 	margin-bottom: 2px;
 	display: inline-block;
-	float: none;
 }
 .isotope-container {
 	overflow: hidden;

@@ -12,7 +12,7 @@ module.exports = function() {
         json: require('./bower.json'),
         directory: './bower_components/',
         ignorePath: '../..',
-        exclude: ["bower_components/masonry", "bower_components/outlayer", "bower_components/doc-ready", "bower_components/fizzy-ui-utils", "bower_components/get-style-property", "bower_components/get-size", "bower_components/matches-selector", "bower_components/eventEmitter", "bower_components/eventie"]
+        exclude: ['bower_components/masonry', 'bower_components/outlayer', 'bower_components/doc-ready', 'bower_components/fizzy-ui-utils', 'bower_components/get-style-property', 'bower_components/get-size', 'bower_components/matches-selector', 'bower_components/eventEmitter', 'bower_components/eventie']
     };
     var nodeModules = 'node_modules';
 

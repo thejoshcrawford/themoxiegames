@@ -22,34 +22,34 @@
         function activate() {
             var promises = [getMessageCount(), getPeople()];
 
-           // // $(".banner-image").backstretch('../images/banner2.jpg');
+           // // $('.banner-image').backstretch('../images/banner2.jpg');
 
             // Fixed header
             //-----------------------------------------------
             $(window).scroll(function () {
-                if (($(".header.fixed").length > 0)) {
+                if (($('.header.fixed').length > 0)) {
                     if (($(this).scrollTop() > 0) && ($(window).width() > 767)) {
-                        $("body").addClass("fixed-header-on");
+                        $('body').addClass('fixed-header-on');
                     } else {
-                        $("body").removeClass("fixed-header-on");
+                        $('body').removeClass('fixed-header-on');
                     }
                 };
             });
 
             $(window).load(function () {
-                if (($(".header.fixed").length > 0)) {
+                if (($('.header.fixed').length > 0)) {
                     if (($(this).scrollTop() > 0) && ($(window).width() > 767)) {
-                        $("body").addClass("fixed-header-on");
+                        $('body').addClass('fixed-header-on');
                     } else {
-                        $("body").removeClass("fixed-header-on");
+                        $('body').removeClass('fixed-header-on');
                     }
                 };
             });
 
             //Scroll Spy
             //-----------------------------------------------
-            if ($(".scrollspy").length > 0) {
-                $("body").addClass("scroll-spy");
+            if ($('.scrollspy').length > 0) {
+                $('body').addClass('scroll-spy');
                 $('body').scrollspy({
                     target: '.scrollspy',
                     offset: 152
@@ -58,7 +58,7 @@
 
             //Smooth Scroll
             //-----------------------------------------------
-            if ($(".smooth-scroll").length > 0) {
+            if ($('.smooth-scroll').length > 0) {
                 $('.smooth-scroll a[href*=#]:not([href=#]), a[href*=#]:not([href=#]).smooth-scroll').click(function () {
                     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                         var target = $(this.hash);
@@ -75,10 +75,10 @@
 
             // Animations
             //-----------------------------------------------
-            if (($("[data-animation-effect]").length > 0) && !Modernizr.touch) {
-                $("[data-animation-effect]").each(function () {
+            if (($('[data-animation-effect]').length > 0) && !Modernizr.touch) {
+                $('[data-animation-effect]').each(function () {
                     var $this = $(this),
-                        animationEffect = $this.attr("data-animation-effect");
+                        animationEffect = $this.attr('data-animation-effect');
                     // if (Modernizr.mq('only all and (min-width: 768px)') && Modernizr.csstransitions) {
                     //     $this.appear(function () {
                     //         setTimeout(function () {
@@ -90,36 +90,6 @@
                     // }
                 });
             };
-
-            // // Isotope filters
-            // //-----------------------------------------------
-            // if ($('.isotope-container').length > 0) {
-            //     $(window).load(function () {
-            //         $('.isotope-container').fadeIn();
-            //         var $container = $('.isotope-container').isotope({
-            //             itemSelector: '.isotope-item',
-            //             layoutMode: 'masonry',
-            //             transitionDuration: '0.6s',
-            //             filter: "*"
-            //         });
-            //         // filter items on button click
-            //         $('.filters').on('click', 'ul.nav li a', function () {
-            //             var filterValue = $(this).attr('data-filter');
-            //             $(".filters").find("li.active").removeClass("active");
-            //             $(this).parent().addClass("active");
-            //             $container.isotope({ filter: filterValue });
-            //             return false;
-            //         });
-            //     });
-            // };
-
-            // //Modal
-            // //-----------------------------------------------
-            // if ($(".modal").length > 0) {
-            //     $(".modal").each(function () {
-            //         $(".modal").prependTo("body");
-            //     });
-            // }
 
             return $q.all(promises).then(function () {
                 logger.info('Activated Home View');

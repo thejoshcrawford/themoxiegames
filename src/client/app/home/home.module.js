@@ -5,6 +5,8 @@
         'app.core',
         'app.widgets',
         'backstretch',
-        'paypalButton'
+        'paypalButton',
+        'duScroll',
+        'angular-scroll-animate'
       ]);
 })();

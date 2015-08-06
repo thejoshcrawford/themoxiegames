@@ -5,9 +5,9 @@
         .module('app.home')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$q', 'dataservice', 'logger'];
+    HomeController.$inject = ['$q', '$scope', 'dataservice', 'logger'];
     /* @ngInject */
-    function HomeController($q, dataservice, logger) {
+    function HomeController($q, $scope, dataservice, logger) {
         var vm = this;
         vm.news = {
             title: 'The Moxie Games',
@@ -18,11 +18,16 @@
         vm.title = 'Home';
 
         activate();
+        
+        $scope.animateElementIn = function($el) {
+            $el.removeClass('object-non-visible');
+            $el.addClass('animated object-visible fadeIn'); // this example leverages animate.css classes 
+        };
+        
+        $scope.animateElementOut = function($el) {};
 
         function activate() {
             var promises = [getMessageCount(), getPeople()];
-
-           // // $('.banner-image').backstretch('../images/banner2.jpg');
 
             // Fixed header
             //-----------------------------------------------
@@ -45,51 +50,6 @@
                     }
                 };
             });
-
-            //Scroll Spy
-            //-----------------------------------------------
-            if ($('.scrollspy').length > 0) {
-                $('body').addClass('scroll-spy');
-                $('body').scrollspy({
-                    target: '.scrollspy',
-                    offset: 152
-                });
-            }
-
-            //Smooth Scroll
-            //-----------------------------------------------
-            if ($('.smooth-scroll').length > 0) {
-                $('.smooth-scroll a[href*=#]:not([href=#]), a[href*=#]:not([href=#]).smooth-scroll').click(function () {
-                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                        var target = $(this.hash);
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                        if (target.length) {
-                            $('html,body').animate({
-                                scrollTop: target.offset().top - 151
-                            }, 1000);
-                            return false;
-                        }
-                    }
-                });
-            }
-
-            // Animations
-            //-----------------------------------------------
-            if (($('[data-animation-effect]').length > 0) && !Modernizr.touch) {
-                $('[data-animation-effect]').each(function () {
-                    var $this = $(this),
-                        animationEffect = $this.attr('data-animation-effect');
-                    // if (Modernizr.mq('only all and (min-width: 768px)') && Modernizr.csstransitions) {
-                    //     $this.appear(function () {
-                    //         setTimeout(function () {
-                    //             $this.addClass('animated object-visible ' + animationEffect);
-                    //         }, 400);
-                    //     }, { accX: 0, accY: -130 });
-                    // } else {
-                        $this.addClass('object-visible');
-                    // }
-                });
-            };
 
             return $q.all(promises).then(function () {
                 logger.info('Activated Home View');

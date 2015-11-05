@@ -9,13 +9,8 @@
     /* @ngInject */
     function HomeController($q, $scope, dataservice, logger) {
         var vm = this;
-        vm.news = {
-            title: 'The Moxie Games',
-            description: "The Moxie Games is a Women's only CrossFit competition."
-        };
-        vm.messageCount = 0;
-        vm.people = [];
-        vm.title = 'Home';
+        vm.division = "";
+        vm.email = "";
 
         activate();
         
@@ -27,7 +22,6 @@
         $scope.animateElementOut = function($el) {};
 
         function activate() {
-            var promises = [getMessageCount(), getPeople()];
 
             // Fixed header
             //-----------------------------------------------
@@ -49,24 +43,6 @@
                         $('body').removeClass('fixed-header-on');
                     }
                 };
-            });
-
-            return $q.all(promises).then(function () {
-                
-            });
-        }
-
-        function getMessageCount() {
-            return dataservice.getMessageCount().then(function (data) {
-                vm.messageCount = data;
-                return vm.messageCount;
-            });
-        }
-
-        function getPeople() {
-            return dataservice.getPeople().then(function (data) {
-                vm.people = data;
-                return vm.people;
             });
         }
     }

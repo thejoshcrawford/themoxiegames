@@ -6,6 +6,9 @@ Created:November 2014
 License:Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
 File Description:Main CSS file of the template */
 
+@text-color-link: #FFD6FF;
+@text-color-primary: #629B32;
+@background-primary: #43612B;
 
 /* Typography
 ----------------------------------------------------------------------------- */
@@ -40,9 +43,13 @@ h1 {
 	margin-bottom: 20px;
 }
 h2 {
-	font-size: 28px;
+	font-size: 20px;
 	margin-bottom: 15px;
 }
+@media (min-width:440px){
+	font-size: 28px;
+}
+
 h3 {
 	font-size: 22px;
 }
@@ -62,16 +69,16 @@ h1 span,
 h2 span,
 h3 span,
 h4 span {
-	color: #339BEB;
+	color: #FFD6FF;
 }
 .text-colored {
-	color: #55acee;
+	color: @text-color-primary;
 }
 a {
-	color: #55acee;
+	color: @text-color-link;
 }
 a:hover {
-	color: #339BEB;
+	color: @text-color-link;
 }
 a:focus,
 a:active {
@@ -117,7 +124,7 @@ blockquote {
 ----------------------------------------------------------------------------- */
 .application-form .btn-group {
 	a {
-		color: #55acee;
+		color: @text-color-primary;
 		text-decoration: none;
 	}
 }
@@ -155,7 +162,7 @@ blockquote {
 }
 .banner-caption {
 	position: absolute;
-	top: 40%;
+	top: 18%;
 	width: 100%;
 	z-index: 2;
 }
@@ -181,7 +188,7 @@ blockquote {
 	color: #ffffff;
 }
 .default-bg.blue {
-	background-color: #55acee;
+	background-color: @text-color-primary;
 }
 .translucent-bg {
 	color: #ffffff;
@@ -238,14 +245,14 @@ blockquote {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 .translucent-bg.blue:after {
-	background-color: rgba(85, 172, 238, 0.7);
+	background-color: rgba(202, 152, 218, 0.7);
 }
 .translucent-bg .container {
 	z-index: 3;
 	position: relative;
 }
 .bg-image-1 {
-	background: url("../images/bg-image-1.jpg") 50% 0px no-repeat;
+	background: url("../images/banner3.jpg") 50% 0px no-repeat;
 }
 .bg-image-2 {
 	background: url("../images/bg-image-2.jpg") 50% 0px no-repeat;
@@ -297,9 +304,9 @@ blockquote {
 .banner-caption h6 {
 	color: #ffffff;
 }
-.banner-caption h1 {
-	font-size: 60px;
-}
+// .banner-caption h1 {
+// 	font-size: 60px;
+// }
 
 .footer:before {
   content: "";
@@ -310,7 +317,7 @@ blockquote {
   height: 100%;  
   z-index: -1;
   opacity: .9;
-  background: url("/images/flower-bg.jpg") no-repeat center center;
+  background: url("/images/banner4.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -351,18 +358,18 @@ blockquote {
 	transition: all 0.2s ease-in-out;
 }
 .btn-default {
-	color: #55acee;
+	color: @text-color-primary;
 	border: 1px solid #cccccc;
 }
 .btn-default:hover {
 	color: #ffffff;
-	background-color: #339BEB;
-	border-color: #339BEB;
+	background-color: @background-primary;
+	border-color: @background-primary;
 }
 .btn-default:active {
 	color: #ffffff;
-    background-color: #339BEB;
-    border-color: #339BEB;
+    background-color: @background-primary;
+    border-color: @background-primary;
 }
 
 /* Collapse
@@ -393,7 +400,7 @@ blockquote {
 	padding: 12px 35px 12px 15px;
 	display: inline-block;
 	width: 100%;
-	background-color: #55acee;
+	background-color: @text-color-primary;
 	color: #ffffff;
 	position: relative;
 	text-decoration: none;
@@ -418,7 +425,7 @@ blockquote {
 }
 .panel-heading a:hover {
 	text-decoration: none;
-	background-color: #55acee;
+	background-color: @text-color-primary;
 	color: #ffffff;
 }
 .panel-title a i {
@@ -432,8 +439,8 @@ blockquote {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus,
 .nav-pills > li > a:hover {
-	background-color: #55acee;
-	border-color: #55acee;
+	background-color: @text-color-primary;
+	border-color: @text-color-primary;
 	color: #ffffff;
 }
 .nav-pills > li > a {
@@ -529,7 +536,7 @@ textarea {
 	border-radius: 0px;
 }
 .modal-header {
-	background-color: #55acee;
+	background-color: @text-color-primary;
 	color: #ffffff;
 }
 .modal-header h4 {
@@ -578,12 +585,12 @@ textarea {
 }
 .main-navigation .navbar-default .navbar-nav > li.active > a {
 	background-color: transparent;
-	color: #55acee;
+	color: @text-color-primary;
 }
 .main-navigation .navbar-default .navbar-nav > li > a:hover,
 .main-navigation .navbar-default .navbar-nav > li.active > a:hover,
 .main-navigation .navbar-default .navbar-nav > li > a.active, {
-	color: #55acee;
+	color: @text-color-primary;
 }
 @media (min-width:768px) {
 	.main-navigation .navbar-default .navbar-nav > li > a {
@@ -657,7 +664,7 @@ textarea {
 	float: left;
 }
 .site-name {
-	font-size: 36px;
+	font-size: 30px;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -672,6 +679,20 @@ textarea {
 }
 .site-slogan {
 	font-size: 12px;
+	display: none;	
+}
+
+@media (min-width:350px){
+	.site-slogan {
+		display: block;
+	}
+}
+
+
+@media (min-width:768px){
+	.site-name {
+	font-size: 35px;
+	}
 }
 
 /* Testimonials
@@ -701,7 +722,7 @@ textarea {
 	transition: all 0.2s ease-in-out;
 }
 .social-links li.twitter a:hover {
-	color: #55acee;
+	color: @text-color-primary;
 }
 .social-links li.skype a:hover {
 	color: #00aff0;

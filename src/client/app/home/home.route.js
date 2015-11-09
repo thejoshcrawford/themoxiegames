@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -25,6 +25,15 @@
                         nav: 1,
                         content: '<i class="fa fa-home"></i> Home'
                     }
+                }
+            },
+            {
+                state: 'sheet',
+                config: {
+                    url: '/sheet',
+                    templateUrl: 'app/home/sheet.html',
+                    controller: 'HomeController',
+                    controllerAs: 'vm'
                 }
             }
         ];

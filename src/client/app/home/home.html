@@ -8,9 +8,13 @@
 					<h1 class="text-center">We are
 						<span>Moxie</span>
 					</h1>
-					<p class="lead text-center">Moxie means to be bold and beautiful, just like the women of the Northwest! This is a chance for ladies to come together,
+					<h2 class="text-center">January 23rd, 2016<br>
+					Hosted by <a href="http://crossfitspokanevalley.com">CrossFit Spokane Valley<a/></h2>
+					<p class="lead">Moxie means to be bold and beautiful, just like the women of the Northwest! This is a chance for ladies to come together,
 						show off their fitness and celebrate the love for CrossFit we all share. A portion of every entry will go towards the
-						UGM Crisis Shelter for Women and Children in Spokane, WA. To compete you will need to meet the following standards:</p>
+						UGM Crisis Shelter for Women and Children in Spokane, WA.</p>
+					<h2 class="text-center">Womens Rx - Womens Masters (50+) - Teams of Three</h2>
+					<p class="lead">To compete you will need to meet the following standards:</p>
 					<ul>
 						<li>Barbell Lifts: 65lbs for individuals and 55lbs for masters</li>
 						<li>Box Jumps: 20inch box</li>
@@ -37,23 +41,23 @@
 						<form class="application-form form-group" name="applicationForm">
 							<div class="btn-group btn-group-justified">
 								<a href="javascript:void(0)" ng-click="vm.division = 'individual'" ng-class="{ 'active' : vm.division == 'individual' }"
-								class="btn btn-default">Individual Rx ($55)</a>
-								<a href="javascript:void(0)" ng-click="vm.division = 'masters'" ng-class="{ 'active' : vm.division == 'masters' }" class="btn btn-default">Masters 50+ ($55)</a>
-								<a href="javascript:void(0)" ng-click="vm.division = 'team'" ng-class="{ 'active' : vm.division == 'team' }" class="btn btn-default">Team of 3 ($120)</a>
+								class="btn btn-default">Rx ($55)</a>
+								<a href="javascript:void(0)" ng-click="vm.division = 'masters'" ng-class="{ 'active' : vm.division == 'masters' }" class="btn btn-default">Masters ($55)</a>
+								<a href="javascript:void(0)" ng-click="vm.division = 'team'" ng-class="{ 'active' : vm.division == 'team' }" class="btn btn-default">Team ($120)</a>
 							</div>
 
 							<br/>
 
 							<div class="row">
-								<div class="col-xs-4">
+								<div class="col-xs-12 col-sm-4">
 									<div class="form-group">
 										<input class="form-control" ng-class="{'is-valid': applicationForm.athlete1.$valid, 'is-dirty': applicationForm.athlete1.$dirty && applicationForm.athlete1.hasBlurred}"
 										ng-blur="applicationForm.athlete1.hasBlurred = applicationForm.athlete1.$dirty" ng-model="vm.athlete1" name="athlete1"
 										type="text" placeholder="Athlete" required="required" />
 									</div>
 								</div>
-								<div class="col-xs-8">
-									<label> T-shirt size
+								<div class="col-xs-12 col-sm-8">
+									<label>Shirt size
 										<div class="btn-group">
 
 											<a href="javascript:void(0)" ng-click="vm.athlete1size = 'small'" ng-class="{ 'active' : vm.athlete1size == 'small' }" class="btn btn-default">S</a>
@@ -70,14 +74,14 @@
 								</div>
 							</div>
 							<div class="row" ng-show="vm.division == 'team'">
-								<div class="col-xs-4">
+								<div class="col-xs-12 col-sm-4">
 									<div class="form-group">
 										<input class="form-control" ng-class="{'is-valid': applicationForm.athlete2.$valid, 'is-dirty': applicationForm.athlete2.$dirty && applicationForm.athlete2.hasBlurred}"
 										ng-model="vm.athlete2" name="athlete2" type="text" placeholder="Second athlete" required="required" />
 									</div>
 								</div>
-								<div class="col-xs-8">
-									<label> T-shirt size
+								<div class="col-xs-12 col-sm-8">
+									<label>Shirt size
 										<div class="btn-group">
 											<a href="javascript:void(0)" ng-click="vm.athlete2size = 'small'" ng-class="{ 'active' : vm.athlete2size == 'small' }" class="btn btn-default">S</a>
 											<a href="javascript:void(0)" ng-click="vm.athlete2size = 'medium'" ng-class="{ 'active' : vm.athlete2size == 'medium' }"
@@ -93,14 +97,14 @@
 								</div>
 							</div>
 							<div class="row" ng-show="vm.division == 'team'">
-								<div class="col-xs-4">
+								<div class="col-xs-12 col-sm-4">
 									<div class="form-group">
 										<input class="form-control" ng-class="{'is-valid': applicationForm.athlete3.$valid, 'is-dirty': applicationForm.athlete3.$dirty && applicationForm.athlete3.hasBlurred}"
 										ng-model="vm.athlete3" name="athlete3" type="text" placeholder="Third athlete" required="required" />
 									</div>
 								</div>
-								<div class="col-xs-8">
-									<label> T-shirt size
+								<div class="col-xs-12 col-sm-8">
+									<label>Shirt size
 										<div class="btn-group">
 											<a href="javascript:void(0)" ng-click="vm.athlete3size = 'small'" ng-class="{ 'active' : vm.athlete3size == 'small' }" class="btn btn-default">S</a>
 											<a href="javascript:void(0)" ng-click="vm.athlete3size = 'medium'" ng-class="{ 'active' : vm.athlete3size == 'medium' }"
@@ -183,28 +187,18 @@
 					<div class="footer-content ">
 						<ul class="list-icons ">
 							<li>
-								<i class="fa fa-map-marker pr-10 "></i>12403 E 1st Ave,
+								<i class="fa fa-map-marker pr-10 "></i>12403 E 1st Ave
 								<br>Spokane Valley, WA 99216
 								<li>
 									<i class="fa fa-phone pr-10 "></i>(509) 863-7922</li>
 								<li>
 									<i class="fa fa-envelope-o pr-10 "></i><a href="mailto:salem.giampietro@yahoo.com">salem.giampietro@yahoo.com</a></li>
-						</ul>
-						<ul class="social-links ">
-							<li class="facebook ">
-								<a target="_blank " href="https://www.facebook.com/pages/HtmlCoder/714570988650168
-													"><i class="fa fa-facebook "></i></a>
-							</li>
-							<li class="twitter ">
-								<a target="_blank " href="https://twitter.com/HtmlcoderMe "><i class="fa fa-twitter "></i></a>
-							</li>
-							<li class="youtube ">
-								<a target="_blank " href="http://www.youtube.com "><i class="fa fa-youtube "></i></a>
-							</li>
+								<li>
+									<i class="fa fa-facebook pr-10 "></i><a href="https://www.facebook.com/events/912605735476215/">page</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-sm-6 ">
+				<!--<div class="col-sm-6 ">
 					<div class="footer-content ">
 						<form role="form " id="footer-form ">
 							<div class="form-group has-feedback ">
@@ -225,7 +219,7 @@
 							<input type="submit " value="Send " class="btn btn-default " style="margin-bottom: 39px;">
 						</form>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 		<div class="subfooter ">

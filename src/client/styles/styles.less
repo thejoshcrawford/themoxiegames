@@ -150,6 +150,10 @@ blockquote {
 	vertical-align: middle;
 	min-height: 100%;
 	width: 100%;
+	min-height: 130vh;
+	@media (min-width: 560px) {
+      min-height: 100vh;
+    }
 }
 .banner:after {
 	position: absolute;
@@ -682,7 +686,7 @@ textarea {
 	display: none;	
 }
 
-@media (min-width:350px){
+@media (min-width:560px){
 	.site-slogan {
 		display: block;
 	}

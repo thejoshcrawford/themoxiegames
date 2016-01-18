@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.home')
+        .module('app.leaderboard')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -14,11 +14,11 @@
     function getStates() {
         return [
             {
-                state: 'home',
+                state: 'leaderboard',
                 config: {
-                    url: '/',
-                    templateUrl: 'app/home/home.html',
-                    controller: 'HomeController',
+                    url: '/lb',
+                    templateUrl: 'app/leaderboard/leaderboard.html',
+                    controller: 'LeaderboardController',
                     controllerAs: 'vm'
                 }
             }

@@ -3,7 +3,6 @@
 
     angular.module('app.home', [
         'app.core',
-        'app.widgets',
         'backstretch',
         'paypalButton',
         'duScroll',

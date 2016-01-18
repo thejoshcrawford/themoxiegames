@@ -5,9 +5,9 @@
         .module('app.home')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$q', '$scope', 'dataservice', 'logger'];
+    HomeController.$inject = ['$q', '$scope', 'logger'];
     /* @ngInject */
-    function HomeController($q, $scope, dataservice, logger) {
+    function HomeController($q, $scope, logger) {
         var vm = this;
         vm.division = "";
         vm.email = "";

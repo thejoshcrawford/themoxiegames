@@ -1,0 +1,65 @@
+<div class="leaderboard">	
+	<header class="events-header navbar navbar-default navbar-fixed-top">
+		<div class="title">The Hunger Games Leaderboard</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="division-events" 
+					ng-repeat="division in vm.divisions" 
+					ng-show="vm.selectedDivision === division.name"
+					>
+					<div class="col-xs-4 event-title" 
+						ng-repeat="event in division.events | limitTo:3"
+						ng-click="vm.showEvent(event.name)"				
+						>
+						<h3 ng-class="{active: vm.selectedEvent === event.name}">{{event.name | uppercase}}</h3>
+					</div>				
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="division-events" 
+					ng-repeat="division in vm.divisions" 
+					ng-show="vm.selectedDivision === division.name"
+					>
+					<div class="col-xs-6 event-title" 
+						ng-repeat="event in division.events | limitTo:2:3"
+						ng-click="vm.showEvent(event.name)"				
+						>
+						<h3 ng-class="{active: vm.selectedEvent === event.name}">{{event.name | uppercase}}</h3>
+					</div>		
+				</div>				
+			</div>
+			<div class="row leaderboard-header">
+				<div class="col-xs-6 leaderboard-header-title">Athlete</div>
+				<div class="col-xs-3 leaderboard-header-title text-center">Score</div>
+				<div class="col-xs-3 leaderboard-header-title text-center">Rank</div>
+			</div>
+		</div>
+	</header>
+	<main class="leaderboard-body" ng-repeat="division in vm.divisions" ng-show="vm.selectedDivision === division.name">
+		<div class="container-fluid">
+			<div ng-repeat="event in division.events"
+				ng-show="vm.selectedEvent == event.name">
+				<div class="row" 
+					ng-repeat="score in event.scores"
+					>
+					<div class="col-xs-6 athlete-name">{{score.athleteName}}</div>
+					<div ng-if="event.measure != 'time'" class="col-xs-3 athlete-event text-center">{{score.value}}</div>
+					<div ng-if="event.measure == 'time'" class="col-xs-3 athlete-event text-center">{{score.value | secondsToDateTime | date:'mm:ss'}}</div>
+					<div class="col-xs-3 athlete-event text-center">{{score.rank}}</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="container-fluid divisions-footer">
+		<div class="row">
+			<div class="col-xs-4 division-title" 
+				ng-repeat="division in vm.divisions" 
+				ng-click="vm.showDivision(division.name)"
+				ng-class="{active: vm.selectedDivision === division.name}"
+				>
+				<h1 blink='division.$id === vm.updatedDivision' blink-watch='vm.updateCount'>{{division.name}}</h1>
+			</div>
+		</div>
+	</footer>
+</div>

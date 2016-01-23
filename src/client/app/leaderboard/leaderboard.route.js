@@ -21,6 +21,15 @@
                     controller: 'LeaderboardController',
                     controllerAs: 'vm'
                 }
+            },
+            {
+            state: 'leaderboard-admin',
+                config: {
+                    url: '/lb-admin',
+                    templateUrl: 'app/leaderboard/leaderboard-admin.html',
+                    controller: 'LeaderboardAdminController',
+                    controllerAs: 'vm'
+                }
             }
         ];
     }

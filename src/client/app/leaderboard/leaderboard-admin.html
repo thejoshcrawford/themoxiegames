@@ -1,0 +1,18 @@
+<div class="division leaderboard-admin" 
+    ng-repeat="division in vm.divisions">
+    <div class="name">{{division.name}}</div>
+    <div class="events">
+        <div class="event"
+            ng-repeat="event in division.events">
+            <div class="name" >{{event.name}}</div>
+            <div class="scores">
+                <div class="score"
+                    ng-repeat="score in event.scores">
+                    <div>{{score.athleteNumber}}</div>
+                    <div>{{score.athleteName}}</div>
+                    <input type="text" ng-model="score.value" ng-change='vm.divisions.$save(division)'>
+                </div>
+            </div>
+        </div> 
+    </div>   
+</div>

@@ -265,6 +265,10 @@ blockquote {
 /* Layout
 ----------------------------------------------------------------------------- */
 .leaderboard {
+    .dev {
+        float: right;
+        margin-right: 3px;
+    }
 	.title {
 		background: @color-primary-0;
 		color: white;
@@ -351,6 +355,21 @@ blockquote {
 			background: @color-complement-0
 		}
 	}
+}
+
+.leaderboard-admin{
+    .name {
+        font-weight: bold; 
+    }
+    .events {
+         display: flex;
+         
+         .score {
+             display: flex;
+         }
+    }
+    
+    
 }
 
 @color-primary-0: #BD5065;	/* Main Primary color */

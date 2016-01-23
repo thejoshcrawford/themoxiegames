@@ -10,7 +10,7 @@
                     ng-repeat="score in event.scores">
                     <div>{{score.athleteNumber}}</div>
                     <div>{{score.athleteName}}</div>
-                    <input type="text" ng-model="score.value" ng-change='vm.divisions.$save(division)'>
+                    <input type="text" ng-model="score.value" ng-blur='vm.divisions.$save(division)'>
                 </div>
             </div>
         </div> 

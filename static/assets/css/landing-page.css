@@ -53,6 +53,11 @@ body {
 a {
   color: #2ca8ff;
 }
+
+.brand {
+  font-family: 'Pacifico', cursive;
+}
+
 a:hover, a:focus {
   color: #109cff;
   text-decoration: none;
@@ -81,6 +86,12 @@ a:focus, a:active {
 .fa {
   width: 18px;
   text-align: center;
+}
+
+.facebook-link {
+  padding-left: 7px;
+}
+
 }
 
 .btn {

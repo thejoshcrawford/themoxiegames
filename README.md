@@ -10,7 +10,7 @@
 Remove the build directory from the project’s .gitignore file
 commit build directory
 (first time) git subtree push --prefix dist origin gh-pages
-(subsequent times) git push origin `git subtree split --prefix build master`:gh-pages --force
+(subsequent times) git push origin `git subtree split --prefix static master`:gh-pages --force
 
 ## Prerequisites
 

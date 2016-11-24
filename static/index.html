@@ -30,7 +30,7 @@
             <a href="http://www.creative-tim.com">
                 <div class="logo-container">
                     <!--<div class="logo">-->
-                        <!--<img src="assets/img/new_logo.png" alt="Creative Tim Logo">-->
+                    <!--<img src="assets/img/new_logo.png" alt="Creative Tim Logo">-->
                     <!--</div>-->
                     <div class="brand">
                         Moxie Games
@@ -96,7 +96,7 @@
                                 Registration starts November 25th
                             </button>
                             <!--<button class="btn btn-info btn-fill">-->
-                                <!--Register for the 2017 Moxie Games-->
+                            <!--Register for the 2017 Moxie Games-->
                             <!--</button>-->
                         </a>
                         <!--<button class="btn btn-simple btn-neutral">-->
@@ -136,21 +136,21 @@
             <!--</p>-->
             <ul class="text-left">
                 <li>Barbell Lifts: 75lbs for Rx individual and 55lbs for masters and teams</li>
-                <li>Dumbbells: 20lbs for Rx individual and 15lbs for masters and teams </li>
+                <li>Dumbbells: 20lbs for Rx individual and 15lbs for masters and teams</li>
                 <li>Kettle Bell Movements: 35lbs for Rx individual and 26lbs for masters and teams</li>
                 <li>DBall: 70lbs for Rx individual and 50lbs for masters and teams</li>
             </ul>
             <div class="logos">
-            <ul class="list-unstyled">
-            <li><img src="assets/img/logos/athleta-logo_0.png"/></li>
-            <li><img src="assets/img/logos/bolderband.png"/></li>
-            <li><img src="assets/img/logos/bp-logo-motto.png"/></li>
-            <li><img src="assets/img/logos/fleetfeet.png"/></li>
-            <li>Geisha Creations</li>
-            <li><img src="assets/img/logos/mishakaudi.png"/></li>
-            <li><img src="assets/img/logos/qalo.png"/></li>
-            <li><img src="assets/img/logos/ripfix-logo.png"/></li>
-            </ul>
+                <ul class="list-unstyled">
+                    <li><img src="assets/img/logos/athleta-logo_0.png"/></li>
+                    <li><img src="assets/img/logos/bolderband.png"/></li>
+                    <li><img src="assets/img/logos/bp-logo-motto.png"/></li>
+                    <li><img src="assets/img/logos/fleetfeet.png"/></li>
+                    <li>Geisha Creations</li>
+                    <li><img src="assets/img/logos/mishakaudi.png"/></li>
+                    <li><img src="assets/img/logos/qalo.png"/></li>
+                    <li><img src="assets/img/logos/ripfix-logo.png"/></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -472,16 +472,16 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
     var divisions = [];
-    $.get( "http://leaderboard.dev/api/divisions", function(d) {
+    $.get("http://leaderboard.dev/api/divisions", function (d) {
         divisions = d;
 
         $('#division').change(updateRegisterButtonText);
 
         updateRegisterButtonText();
     })
-    .fail(function() {
-        alert( "Whoops, something went wrong." );
-    });
+        .fail(function () {
+            alert("Whoops, something went wrong.");
+        });
 
     $('.radio-button a').on('click', function () {
         var sel = $(this).data('title');
@@ -554,35 +554,7 @@
         key: 'pk_test_yeq1BkNNfbOTwWAGsjY8fqdC',
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',
-        token: function (token) {
-            // You can access the token ID with `token.id`.
-            // Get the token ID to your server-side code for use.
-            var division = $('#division').val();
-            if (division === 'rx-individual'){
-                divisionId = 1;
-            } else if (division === 'masters-individual') {
-                divisionId = 2;
-            } else if (division === 'novice-team') {
-                divisionId = 3;
-            } else if (division === 'masters-team'){
-                divisionId = 4;
-            }
-
-            var parameters = {'token': token};
-            parameters.name1 = $('#name1').val();
-            parameters.size1 = $('#size1').val();
-            parameters.name2 = $('#name2').val();
-            parameters.size2 = $('#size2').val();
-            parameters.name3 = $('#name3').val();
-            parameters.size3 = $('#size3').val();
-
-            $.post( "http://leaderboard.dev/api/divisions/" + divisionId +  "/athlete", parameters, function() {
-                alert( JSON.stringify(token) );
-            })
-            .fail(function() {
-                alert( "Whoops, something went wrong." );
-            });
-        },
+        token: charge,
         allowRememberMe: false
     });
 
@@ -595,13 +567,13 @@
             amount = 18000;
         }
 
-        if (division === 'rx-individual'){
+        if (division === 'rx-individual') {
             description = 'Rx Individual Registration';
         } else if (division === 'masters-individual') {
             description = 'Masters Individual Registration';
         } else if (division === 'novice-team') {
             description = 'Novice Team Registration';
-        } else if (division === 'masters-team'){
+        } else if (division === 'masters-team') {
             description = 'Masters Team Registration';
         }
 
@@ -618,5 +590,42 @@
     window.addEventListener('popstate', function () {
         handler.close();
     });
+
+    function charge(token) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+        var division = $('#division').val();
+        if (division === 'rx-individual') {
+            divisionId = 1;
+        } else if (division === 'masters-individual') {
+            divisionId = 2;
+        } else if (division === 'novice-team') {
+            divisionId = 3;
+        } else if (division === 'masters-team') {
+            divisionId = 4;
+        }
+
+        var parameters = {'token': token};
+        parameters.name1 = $('#name1').val();
+        parameters.size1 = $('#size1').val();
+        parameters.name2 = $('#name2').val();
+        parameters.size2 = $('#size2').val();
+        parameters.name3 = $('#name3').val();
+        parameters.size3 = $('#size3').val();
+
+        $("#register-button").html("Registering, please wait...");
+        $("#register-button").prop('disabled', true);
+
+        $.post("http://leaderboard.dev/api/divisions/" + divisionId + "/athlete", parameters, function () {
+//            alert( JSON.stringify(token) );
+            $("#register-button").html("Thank you for registering!");
+//            $("#register-button").prop('disabled', false);
+        })
+        .fail(function () {
+            alert("Whoops, something went wrong.");
+            $("#register-button").html("Register");
+            $("#register-button").prop('disabled', false);
+        });
+    }
 </script>
 </html>

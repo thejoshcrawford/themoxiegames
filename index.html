@@ -169,14 +169,14 @@
                             <div class="form-group">
                                 <!--<label for="division" class="control-label text-right">Division</label>-->
                                 <div class="input-group">
-                                    <div class="btn-group radio-button">
-                                        <a class="btn btn-info btn-sm btn-fill active" data-toggle="division"
+                                    <div class="btn-group radio-button division-group">
+                                        <a class="btn btn-info btn-sm btn-fill active division-item" data-toggle="division"
                                            data-title="rx-individual">Rx Individual</a>
-                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="division"
+                                        <a class="btn btn-info btn-sm btn-fill notActive division-item" data-toggle="division"
                                            data-title="masters-individual">Masters Individual (40+)</a>
-                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="division"
+                                        <a class="btn btn-info btn-sm btn-fill notActive division-item" data-toggle="division"
                                            data-title="novice-team">Novice Team</a>
-                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="division"
+                                        <a class="btn btn-info btn-sm btn-fill notActive division-item" data-toggle="division"
                                            data-title="masters-team">Masters Team (40+)</a>
                                     </div>
                                     <input type="hidden" name="division" id="division">
@@ -306,7 +306,7 @@
                                 </div>
                             </div>
                             <!--<button id="register-button" class="btn btn-info btn-fill" disabled>Register</button>-->
-                            <form id="rx-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <form id="rx-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="RRWXBVJZWG964">
                                 <input type="hidden" name="custom" value="">
@@ -314,7 +314,7 @@
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
 
-                            <form id="masters-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'masters'">
+                            <form id="masters-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="JXFM9X5VM5V5G">
                                 <input type="hidden" name="custom" value="">
@@ -322,7 +322,7 @@
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
 
-                            <form id="novice-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'team'">
+                            <form id="novice-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
                                 <input type="hidden" name="custom" value="">
@@ -330,7 +330,7 @@
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
 
-                            <form id="masters-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'team'">
+                            <form id="masters-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="KGLAJJM6SA7Z2">
                                 <input type="hidden" name="custom" value="">

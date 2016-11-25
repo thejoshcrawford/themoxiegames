@@ -862,6 +862,14 @@ a:focus, a:active {
   z-index: 2;
 }
 
+.division-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.division-group a {
+  flex-grow: 1;
+}
 
 .logo-container .logo{
     overflow: hidden;

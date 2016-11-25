@@ -448,6 +448,8 @@
     });
 
     $('input[id^="name"]').on('input', validate);
+    $('input[id^="fran"]').on('input', validate);
+    $('input[id^="snatch"]').on('input', validate);
 
     validate();
 
@@ -503,23 +505,44 @@
             $("#novice-team-button").hide();
             $("#masters-team-button").hide();
             parameters.size1 = $('#size1').val();
-            parameters.size1 = $('#size1').val();
-            parameters.size1 = $('#size1').val();
+            parameters.fran1 = $('#fran1').val();
+            parameters.snatch1 = $('#snatch1').val();
         } else if (division === 'masters-individual' && $('#name1').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").show();
             $("#novice-team-button").hide();
             $("#masters-team-button").hide();
+            parameters.size1 = $('#size1').val();
+            parameters.fran1 = $('#fran1').val();
+            parameters.snatch1 = $('#snatch1').val();
         }  else if (division === 'novice-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").hide();
             $("#novice-team-button").show();
             $("#masters-team-button").hide();
+            parameters.size1 = $('#size1').val();
+            parameters.fran1 = $('#fran1').val();
+            parameters.snatch1 = $('#snatch1').val();
+            parameters.size2 = $('#size2').val();
+            parameters.fran2 = $('#fran2').val();
+            parameters.snatch2 = $('#snatch2').val();
+            parameters.size3 = $('#size3').val();
+            parameters.fran3 = $('#fran3').val();
+            parameters.snatch3 = $('#snatch3').val();
         } else if (division === 'masters-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").hide();
             $("#novice-team-button").hide();
             $("#masters-team-button").show();
+            parameters.size1 = $('#size1').val();
+            parameters.fran1 = $('#fran1').val();
+            parameters.snatch1 = $('#snatch1').val();
+            parameters.size2 = $('#size2').val();
+            parameters.fran2 = $('#fran2').val();
+            parameters.snatch2 = $('#snatch2').val();
+            parameters.size3 = $('#size3').val();
+            parameters.fran3 = $('#fran3').val();
+            parameters.snatch3 = $('#snatch3').val();
         } else {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").hide();
@@ -527,10 +550,8 @@
             $("#masters-team-button").hide();
         }
 
-
-        $("input[name='custom']").attr('value', 'test');
-
-
+        $("input[name='custom']").attr('value', JSON.stringify(parameters));
+        
 //        if ((division === 'rx-individual' || division === 'masters-individual' ) && $('#name1').val()) {
 //            $("#register-button").prop('disabled', false);
 //        } else if ($('#name1').val() && $('#name2').val() && $('#name3').val()) {

@@ -277,7 +277,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <button id="register-button" class="btn btn-info btn-fill" disabled>Register</button>
+                            <!--<button id="register-button" class="btn btn-info btn-fill" disabled>Register</button>-->
+                            <form id="rx-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="RRWXBVJZWG964">
+                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+
+                            <form id="masters-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'masters'">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="JXFM9X5VM5V5G">
+                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+
+                            <form id="novice-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'team'">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
+                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+
+                            <form id="masters-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'team'">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
+                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
                         </form>
                     </div>
                 </div>
@@ -304,7 +335,7 @@
                                     <br>
                                 </li>
                                 <li><i class="fa fa-facebook pr-10"></i><a
-                                        href class="facebook-link"="https://www.facebook.com/themoxiegames">facebook</a>
+                                         class="facebook-link" href="https://www.facebook.com/themoxiegames">facebook</a>
                                 </li>
                             </ul>
                         </div>
@@ -352,17 +383,17 @@
 <script src="assets/js/awesome-landing-page.js" type="text/javascript"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
-    var divisions = [];
-    $.get("http://leaderboard.dev/api/divisions", function (d) {
-        divisions = d;
-
-        $('#division').change(updateRegisterButtonText);
-
-        updateRegisterButtonText();
-    })
-        .fail(function () {
-            alert("Whoops, something went wrong.");
-        });
+//    var divisions = [];
+//    $.get("http://leaderboard.dev/api/divisions", function (d) {
+//        divisions = d;
+//
+//        $('#division').change(updateRegisterButtonText);
+//
+//        updateRegisterButtonText();
+//    })
+//        .fail(function () {
+//            alert("Whoops, something went wrong.");
+//        });
 
     $('.radio-button a').on('click', function () {
         var sel = $(this).data('title');
@@ -371,142 +402,185 @@
 
         $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
         $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+
+        var division = $('#division').val();
+        if (division === 'rx-individual') {
+            $('.extra-athlete').hide(300);
+        } else if (division === 'masters-individual') {
+            $('.extra-athlete').hide(300);
+        }  else if (division === 'novice-team') {
+            $('.extra-athlete').show(300);
+        } else if (division === 'masters-team') {
+            $('.extra-athlete').show(300);
+        }
     });
 
     $('input[id^="name"]').on('input', validate);
 
-    function updateRegisterButtonText() {
-        var division = $('#division').val();
-        if (division === 'rx-individual' || division === 'masters-individual') {
-            $('.extra-athlete').hide(300);
-            if (division === 'rx-individual') {
-                if (divisions[0].athlete_count < divisions[0].max_athletes) {
-                    $("#register-button").html("Register");
-                } else {
-                    $("#register-button").html("Sold Out");
-                }
-            } else {
-                if (divisions[1].athlete_count < divisions[1].max_athletes) {
-                    $("#register-button").html("Register");
-                } else {
-                    $("#register-button").html("Sold Out");
-                }
-            }
-        } else {
-            $('.extra-athlete').show(300);
-            if (division === 'novice-team') {
-                if (divisions[2].athlete_count < divisions[2].max_athletes) {
-                    $("#register-button").html("Register");
-                } else {
-                    $("#register-button").html("Sold Out");
-                }
-            } else {
-                if (divisions[3].athlete_count < divisions[3].max_athletes) {
-                    $("#register-button").html("Register");
-                } else {
-                    $("#register-button").html("Sold Out");
-                }
-            }
-        }
+    validate();
 
-        validate();
-    }
+//    function updateRegisterButtonText() {
+//        var division = $('#division').val();
+//        if (division === 'rx-individual' || division === 'masters-individual') {
+//            $('.extra-athlete').hide(300);
+//            if (division === 'rx-individual') {
+//                if (divisions[0].athlete_count < divisions[0].max_athletes) {
+//                    $("#register-button").html("Register");
+//                } else {
+//                    $("#register-button").html("Sold Out");
+//                }
+//            } else {
+//                if (divisions[1].athlete_count < divisions[1].max_athletes) {
+//                    $("#register-button").html("Register");
+//                } else {
+//                    $("#register-button").html("Sold Out");
+//                }
+//            }
+//        } else {
+//            $('.extra-athlete').show(300);
+//            if (division === 'novice-team') {
+//                if (divisions[2].athlete_count < divisions[2].max_athletes) {
+//                    $("#register-button").html("Register");
+//                } else {
+//                    $("#register-button").html("Sold Out");
+//                }
+//            } else {
+//                if (divisions[3].athlete_count < divisions[3].max_athletes) {
+//                    $("#register-button").html("Register");
+//                } else {
+//                    $("#register-button").html("Sold Out");
+//                }
+//            }
+//        }
+//
+//        validate();
+//    }
 
     function validate() {
-        if ($("#register-button").html() === 'Sold Out') {
-            $("#register-button").prop('disabled', true);
-            return;
-        }
+//        if ($("#register-button").html() === 'Sold Out') {
+//            $("#register-button").prop('disabled', true);
+//            return;
+//        }
 
         var division = $('#division').val();
-        if ((division === 'rx-individual' || division === 'masters-individual' ) && $('#name1').val()) {
-            $("#register-button").prop('disabled', false);
-        } else if ($('#name1').val() && $('#name2').val() && $('#name3').val()) {
-            $("#register-button").prop('disabled', false);
+
+        if (division === 'rx-individual' && $('#name1').val()) {
+            $("#rx-individual-button").show();
+            $("#masters-individual-button").hide();
+            $("#novice-team-button").hide();
+            $("#masters-team-button").hide();
+        } else if (division === 'masters-individual' && $('#name1').val()) {
+            $("#rx-individual-button").hide();
+            $("#masters-individual-button").show();
+            $("#novice-team-button").hide();
+            $("#masters-team-button").hide();
+        }  else if (division === 'novice-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
+            $("#rx-individual-button").hide();
+            $("#masters-individual-button").hide();
+            $("#novice-team-button").show();
+            $("#masters-team-button").hide();
+        } else if (division === 'masters-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
+            $("#rx-individual-button").hide();
+            $("#masters-individual-button").hide();
+            $("#novice-team-button").hide();
+            $("#masters-team-button").show();
         } else {
-            $("#register-button").prop('disabled', true);
+            $("#rx-individual-button").hide();
+            $("#masters-individual-button").hide();
+            $("#novice-team-button").hide();
+            $("#masters-team-button").hide();
         }
+
+
+
+//        if ((division === 'rx-individual' || division === 'masters-individual' ) && $('#name1').val()) {
+//            $("#register-button").prop('disabled', false);
+//        } else if ($('#name1').val() && $('#name2').val() && $('#name3').val()) {
+//            $("#register-button").prop('disabled', false);
+//        } else {
+//            $("#register-button").prop('disabled', true);
+//        }
     }
 
     $('.radio-button a:first-of-type').trigger('click');
 </script>
-<script>
-    var handler = StripeCheckout.configure({
-        key: 'pk_test_yeq1BkNNfbOTwWAGsjY8fqdC',
-        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-        locale: 'auto',
-        token: charge,
-        allowRememberMe: false
-    });
+<!--<script>-->
+    <!--var handler = StripeCheckout.configure({-->
+        <!--key: 'pk_test_yeq1BkNNfbOTwWAGsjY8fqdC',-->
+        <!--image: 'https://stripe.com/img/documentation/checkout/marketplace.png',-->
+        <!--locale: 'auto',-->
+        <!--token: charge,-->
+        <!--allowRememberMe: false-->
+    <!--});-->
 
-    document.getElementById('register-button').addEventListener('click', function (e) {
-        // Open Checkout with further options:
-        var division = $('#division').val();
-        var amount = 6500;
-        var description = '';
-        if (division === 'novice-team' || division === 'masters-team') {
-            amount = 18000;
-        }
+    <!--document.getElementById('register-button').addEventListener('click', function (e) {-->
+        <!--// Open Checkout with further options:-->
+        <!--var division = $('#division').val();-->
+        <!--var amount = 6500;-->
+        <!--var description = '';-->
+        <!--if (division === 'novice-team' || division === 'masters-team') {-->
+            <!--amount = 18000;-->
+        <!--}-->
 
-        if (division === 'rx-individual') {
-            description = 'Rx Individual Registration';
-        } else if (division === 'masters-individual') {
-            description = 'Masters Individual Registration';
-        } else if (division === 'novice-team') {
-            description = 'Novice Team Registration';
-        } else if (division === 'masters-team') {
-            description = 'Masters Team Registration';
-        }
+        <!--if (division === 'rx-individual') {-->
+            <!--description = 'Rx Individual Registration';-->
+        <!--} else if (division === 'masters-individual') {-->
+            <!--description = 'Masters Individual Registration';-->
+        <!--} else if (division === 'novice-team') {-->
+            <!--description = 'Novice Team Registration';-->
+        <!--} else if (division === 'masters-team') {-->
+            <!--description = 'Masters Team Registration';-->
+        <!--}-->
 
-        handler.open({
-            name: 'The Moxie Games',
-            description: description,
-            zipCode: true,
-            amount: amount
-        });
-        e.preventDefault();
-    });
+        <!--handler.open({-->
+            <!--name: 'The Moxie Games',-->
+            <!--description: description,-->
+            <!--zipCode: true,-->
+            <!--amount: amount-->
+        <!--});-->
+        <!--e.preventDefault();-->
+    <!--});-->
 
-    // Close Checkout on page navigation:
-    window.addEventListener('popstate', function () {
-        handler.close();
-    });
+    <!--// Close Checkout on page navigation:-->
+    <!--window.addEventListener('popstate', function () {-->
+        <!--handler.close();-->
+    <!--});-->
 
-    function charge(token) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        var division = $('#division').val();
-        if (division === 'rx-individual') {
-            divisionId = 1;
-        } else if (division === 'masters-individual') {
-            divisionId = 2;
-        } else if (division === 'novice-team') {
-            divisionId = 3;
-        } else if (division === 'masters-team') {
-            divisionId = 4;
-        }
+    <!--function charge(token) {-->
+        <!--// You can access the token ID with `token.id`.-->
+        <!--// Get the token ID to your server-side code for use.-->
+        <!--var division = $('#division').val();-->
+        <!--if (division === 'rx-individual') {-->
+            <!--divisionId = 1;-->
+        <!--} else if (division === 'masters-individual') {-->
+            <!--divisionId = 2;-->
+        <!--} else if (division === 'novice-team') {-->
+            <!--divisionId = 3;-->
+        <!--} else if (division === 'masters-team') {-->
+            <!--divisionId = 4;-->
+        <!--}-->
 
-        var parameters = {'token': token};
-        parameters.name1 = $('#name1').val();
-        parameters.size1 = $('#size1').val();
-        parameters.name2 = $('#name2').val();
-        parameters.size2 = $('#size2').val();
-        parameters.name3 = $('#name3').val();
-        parameters.size3 = $('#size3').val();
+        <!--var parameters = {'token': token};-->
+        <!--parameters.name1 = $('#name1').val();-->
+        <!--parameters.size1 = $('#size1').val();-->
+        <!--parameters.name2 = $('#name2').val();-->
+        <!--parameters.size2 = $('#size2').val();-->
+        <!--parameters.name3 = $('#name3').val();-->
+        <!--parameters.size3 = $('#size3').val();-->
 
-        $("#register-button").html("Registering, please wait...");
-        $("#register-button").prop('disabled', true);
+        <!--$("#register-button").html("Registering, please wait...");-->
+        <!--$("#register-button").prop('disabled', true);-->
 
-        $.post("http://leaderboard.dev/api/divisions/" + divisionId + "/athlete", parameters, function () {
-//            alert( JSON.stringify(token) );
-            $("#register-button").html("Thank you for registering!");
-//            $("#register-button").prop('disabled', false);
-        })
-        .fail(function () {
-            alert("Whoops, something went wrong.");
-            $("#register-button").html("Register");
-            $("#register-button").prop('disabled', false);
-        });
-    }
-</script>
+        <!--$.post("http://leaderboard.dev/api/divisions/" + divisionId + "/athlete", parameters, function () {-->
+<!--//            alert( JSON.stringify(token) );-->
+            <!--$("#register-button").html("Thank you for registering!");-->
+<!--//            $("#register-button").prop('disabled', false);-->
+        <!--})-->
+        <!--.fail(function () {-->
+            <!--alert("Whoops, something went wrong.");-->
+            <!--$("#register-button").html("Register");-->
+            <!--$("#register-button").prop('disabled', false);-->
+        <!--});-->
+    <!--}-->
+<!--</script>-->
 </html>

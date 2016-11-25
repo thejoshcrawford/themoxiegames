@@ -1703,7 +1703,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de8e0009', e
     background: rgba(0, 0, 0, 0.75);
   }
   .landing-page .parallax {
-    height: 550px;
+    height: 750px;
   }
   .landing-page .parallax .parallax-background img {
     width: auto;

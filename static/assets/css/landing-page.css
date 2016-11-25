@@ -608,6 +608,10 @@ a:focus, a:active {
   background-color: whitesmoke;
 }
 
+#register-button {
+  margin-top: 10px;
+}
+
 .btn-social {
   opacity: 0.85;
   padding: 8px 9px;
@@ -726,6 +730,12 @@ a:focus, a:active {
 .radio-button .notActive{
   color: #3276b1;
   background-color: #fff;
+}
+
+.shirt-label {
+  padding-right: 7px;
+  display: inline;
+  float: left;
 }
 
 .landing-page ol{

@@ -165,7 +165,7 @@
                 <div class="col-md-12">
                     <div class="description">
                         <h4 class="header-text">Registration</h4>
-                        <form>
+                        <!--<form>-->
                             <div class="form-group">
                                 <!--<label for="division" class="control-label text-right">Division</label>-->
                                 <div class="input-group">
@@ -281,7 +281,7 @@
                             <form id="rx-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="RRWXBVJZWG964">
-                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="hidden" name="custom" value="">
                                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
@@ -289,7 +289,7 @@
                             <form id="masters-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'masters'">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="JXFM9X5VM5V5G">
-                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="hidden" name="custom" value="">
                                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
@@ -297,19 +297,19 @@
                             <form id="novice-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'team'">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
-                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="hidden" name="custom" value="">
                                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
 
                             <form id="masters-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="vm.division == 'team'">
                                 <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
-                                <input type="hidden" name="custom" value="{{vm | json}}">
+                                <input type="hidden" name="hosted_button_id" value="KGLAJJM6SA7Z2">
+                                <input type="hidden" name="custom" value="">
                                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
-                        </form>
+                        <!--</form>-->
                     </div>
                 </div>
             </div>
@@ -413,6 +413,8 @@
         } else if (division === 'masters-team') {
             $('.extra-athlete').show(300);
         }
+
+        validate();
     });
 
     $('input[id^="name"]').on('input', validate);
@@ -463,12 +465,16 @@
 //        }
 
         var division = $('#division').val();
+        var parameters = {};
 
         if (division === 'rx-individual' && $('#name1').val()) {
             $("#rx-individual-button").show();
             $("#masters-individual-button").hide();
             $("#novice-team-button").hide();
             $("#masters-team-button").hide();
+            parameters.size1 = $('#size1').val();
+            parameters.size1 = $('#size1').val();
+            parameters.size1 = $('#size1').val();
         } else if (division === 'masters-individual' && $('#name1').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").show();
@@ -491,6 +497,8 @@
             $("#masters-team-button").hide();
         }
 
+
+        $("input[name='custom']").attr('value', 'test');
 
 
 //        if ((division === 'rx-individual' || division === 'masters-individual' ) && $('#name1').val()) {

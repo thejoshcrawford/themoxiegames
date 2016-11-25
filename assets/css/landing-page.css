@@ -54,6 +54,13 @@ a {
   color: #2ca8ff;
 }
 
+hr {
+  height: 1px;
+  background-color: lightgray;
+  border: 0;
+  width: 75%;
+}
+
 .brand {
   font-family: 'Pacifico', cursive;
 }
@@ -736,6 +743,10 @@ a:focus, a:active {
   padding-right: 7px;
   display: inline;
   float: left;
+}
+
+#shirt-size {
+  padding-bottom: 10px;
 }
 
 .landing-page ol{

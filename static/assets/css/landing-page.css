@@ -370,7 +370,7 @@ a:focus, a:active {
 }
 
 .btn-sm {
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 3px;
   padding: 5px 10px;
 }
@@ -1713,4 +1713,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de8e0009', e
     .landing-page .navbar-top{
         padding-top: 10px;
     }
-}

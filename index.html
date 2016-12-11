@@ -122,6 +122,7 @@
             <ul class="text-left">
                 <li>Rx Individual - $65</li>
                 <li>Masters Individual (40+) - $65</li>
+                <li>Rx Teams of Three - $60 per athlete</li>
                 <li>Novice Teams of Three - $60 per athlete</li>
                 <li>Masters Teams of Three (40+) - $60 per athlete</li>
                 <li>Register early! Late registration increases on December 20th.</li>
@@ -166,179 +167,211 @@
                     <div class="description">
                         <h4 class="header-text">Registration</h4>
                         <!--<form>-->
-                            <div class="form-group">
-                                <!--<label for="division" class="control-label text-right">Division</label>-->
-                                <div class="input-group">
-                                    <div class="btn-group radio-button division-group">
-                                        <a class="btn btn-info btn-sm btn-fill active division-item" data-toggle="division"
-                                           data-title="rx-individual">Rx Individual</a>
-                                        <a class="btn btn-info btn-sm btn-fill notActive division-item" data-toggle="division"
-                                           data-title="masters-individual">Masters Individual (40+)</a>
-                                        <a class="btn btn-info btn-sm btn-fill notActive division-item" data-toggle="division"
-                                           data-title="novice-team">Novice Team</a>
-                                        <a class="btn btn-info btn-sm btn-fill notActive division-item" data-toggle="division"
-                                           data-title="masters-team">Masters Team (40+)</a>
-                                    </div>
-                                    <input type="hidden" name="division" id="division">
+                        <div class="form-group">
+                            <!--<label for="division" class="control-label text-right">Division</label>-->
+                            <div class="input-group">
+                                <div class="btn-group radio-button division-group">
+                                    <a class="btn btn-info btn-sm btn-fill active division-item" data-toggle="division"
+                                       data-title="rx-individual">Rx Individual</a>
+                                    <a class="btn btn-info btn-sm btn-fill notActive division-item"
+                                       data-toggle="division"
+                                       data-title="masters-individual">Masters Individual (40+)</a>
+                                    <a class="btn btn-info btn-sm btn-fill notActive division-item"
+                                       data-toggle="division"
+                                       data-title="rx-team">Rx Team</a>
+                                    <a class="btn btn-info btn-sm btn-fill notActive division-item"
+                                       data-toggle="division"
+                                       data-title="novice-team">Novice Team</a>
+                                    <a class="btn btn-info btn-sm btn-fill notActive division-item"
+                                       data-toggle="division"
+                                       data-title="masters-team">Masters Team (40+)</a>
                                 </div>
-
+                                <input type="hidden" name="division" id="division">
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="sr-only" for="name1">Athlete name</label>
-                                    <input type="text" class="form-control" id="name1"
-                                           placeholder="Athlete Name">
-                                </div>
+                        </div>
 
-
-                                    <div class="form-group col-xs-6 col-sm-2">
-                                        <label class="sr-only">Fran time</label>
-                                        <input id="fran1" type="text" class="form-control"
-                                               placeholder="Fran Time">
-                                    </div>
-
-
-                                        <div class="form-group col-xs-6 col-sm-2">
-                                            <label class="sr-only">Max cj</label>
-                                            <input id="snatch1" type="text" class="form-control"
-                                                   placeholder="Max Clean & Jerk">
-                                        </div>
-
-
-                                <div class="form-inline col-xs-12 col-sm-4">
-                                    <span class="shirt-label"><label for="size1" class="control-label">Shirt Size</label></span>
-                                    <div id="shirt-size" class="input-group">
-                                        <div class="btn-group radio-button">
-                                            <a class="btn btn-info btn-sm btn-fill active" data-toggle="size1"
-                                               data-title="extra-small">XS</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
-                                               data-title="small">S</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
-                                               data-title="medium">M</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
-                                               data-title="large">L</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
-                                               data-title="extra-large">XL</a>
-                                        </div>
-                                        <input type="hidden" name="size1" id="size1">
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-4">
+                                <label class="sr-only" for="name1">Athlete name</label>
+                                <input type="text" class="form-control" id="name1"
+                                       placeholder="Athlete Name">
                             </div>
 
-                            <div class="row extra-athlete" style="display: none">
-                                <hr>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="sr-only" for="name2">Athlete name</label>
-                                    <input type="text" class="form-control" id="name2"
-                                           placeholder="Athlete Name">
-                                </div>
 
-
-                                <div class="form-group col-xs-6 col-sm-2">
-                                    <label class="sr-only">Fran time</label>
-                                    <input id="fran2" type="text" class="form-control"
-                                           placeholder="Fran Time">
-                                </div>
-
-
-                                <div class="form-group col-xs-6 col-sm-2">
-                                    <label class="sr-only">Max cj</label>
-                                    <input id="snatch2" type="text" class="form-control"
-                                           placeholder="Max Clean & Jerk">
-                                </div>
-                                <div class="form-inline col-xs-12 col-sm-4">
-                                    <span class="shirt-label"><label for="size2" class="control-label">Shirt size</label></span>
-                                    <div id="shirt-size" class="input-group">
-                                        <div class="btn-group radio-button">
-                                            <a class="btn btn-info btn-sm btn-fill active" data-toggle="size2"
-                                               data-title="extra-small">XS</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
-                                               data-title="small">S</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
-                                               data-title="medium">M</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
-                                               data-title="large">L</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
-                                               data-title="extra-large">XL</a>
-                                        </div>
-                                        <input type="hidden" name="size2" id="size2">
-                                    </div>
-                                </div>
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="sr-only">Fran time</label>
+                                <input id="fran1" type="text" class="form-control"
+                                       placeholder="Fran Time">
                             </div>
 
-                            <div class="row extra-athlete" style="display: none">
-                                <hr>
-                                <div class="form-group col-xs-12 col-sm-4">
-                                    <label class="sr-only" for="name3">Athlete name</label>
-                                    <input type="text" class="form-control" id="name3"
-                                           placeholder="Athlete Name">
-                                </div>
+
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="sr-only">Max cj</label>
+                                <input id="snatch1" type="text" class="form-control"
+                                       placeholder="Max Clean & Jerk">
+                            </div>
 
 
-                                <div class="form-group col-xs-6 col-sm-2">
-                                    <label class="sr-only">Fran time</label>
-                                    <input id="fran3" type="text" class="form-control"
-                                           placeholder="Fran Time">
-                                </div>
-
-
-                                <div class="form-group col-xs-6 col-sm-2">
-                                    <label class="sr-only">Max cj</label>
-                                    <input id="snatch3" type="text" class="form-control"
-                                           placeholder="Max Clean & Jerk">
-                                </div>
-                                <div class="form-inline col-xs-12 col-sm-4">
-                                    <span class="shirt-label"><label for="size3" class="control-label">Shirt size</label></span>
-                                    <div id="shirt-size" class="input-group">
-                                        <div class="btn-group radio-button">
-                                            <a class="btn btn-info btn-sm btn-fill active" data-toggle="size3"
-                                               data-title="extra-small">XS</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
-                                               data-title="small">S</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
-                                               data-title="medium">M</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
-                                               data-title="large">L</a>
-                                            <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
-                                               data-title="extra-large">XL</a>
-                                        </div>
-                                        <input type="hidden" name="size3" id="size3">
+                            <div class="form-inline col-xs-12 col-sm-4">
+                                <span class="shirt-label"><label for="size1"
+                                                                 class="control-label">Shirt Size</label></span>
+                                <div id="shirt-size" class="input-group">
+                                    <div class="btn-group radio-button">
+                                        <a class="btn btn-info btn-sm btn-fill active" data-toggle="size1"
+                                           data-title="extra-small">XS</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
+                                           data-title="small">S</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
+                                           data-title="medium">M</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
+                                           data-title="large">L</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size1"
+                                           data-title="extra-large">XL</a>
                                     </div>
+                                    <input type="hidden" name="size1" id="size1">
                                 </div>
                             </div>
-                            <!--<button id="register-button" class="btn btn-info btn-fill" disabled>Register</button>-->
-                            <form id="rx-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
-                                <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="RRWXBVJZWG964">
-                                <input type="hidden" name="custom" value="">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
+                        </div>
 
-                            <form id="masters-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
-                                <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="JXFM9X5VM5V5G">
-                                <input type="hidden" name="custom" value="">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
+                        <div class="row extra-athlete" style="display: none">
+                            <hr>
+                            <div class="form-group col-xs-12 col-sm-4">
+                                <label class="sr-only" for="name2">Athlete name</label>
+                                <input type="text" class="form-control" id="name2"
+                                       placeholder="Athlete Name">
+                            </div>
 
-                            <form id="novice-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
-                                <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
-                                <input type="hidden" name="custom" value="">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
 
-                            <form id="masters-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none;">
-                                <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="KGLAJJM6SA7Z2">
-                                <input type="hidden" name="custom" value="">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="sr-only">Fran time</label>
+                                <input id="fran2" type="text" class="form-control"
+                                       placeholder="Fran Time">
+                            </div>
+
+
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="sr-only">Max cj</label>
+                                <input id="snatch2" type="text" class="form-control"
+                                       placeholder="Max Clean & Jerk">
+                            </div>
+                            <div class="form-inline col-xs-12 col-sm-4">
+                                <span class="shirt-label"><label for="size2"
+                                                                 class="control-label">Shirt size</label></span>
+                                <div id="shirt-size" class="input-group">
+                                    <div class="btn-group radio-button">
+                                        <a class="btn btn-info btn-sm btn-fill active" data-toggle="size2"
+                                           data-title="extra-small">XS</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
+                                           data-title="small">S</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
+                                           data-title="medium">M</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
+                                           data-title="large">L</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size2"
+                                           data-title="extra-large">XL</a>
+                                    </div>
+                                    <input type="hidden" name="size2" id="size2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row extra-athlete" style="display: none">
+                            <hr>
+                            <div class="form-group col-xs-12 col-sm-4">
+                                <label class="sr-only" for="name3">Athlete name</label>
+                                <input type="text" class="form-control" id="name3"
+                                       placeholder="Athlete Name">
+                            </div>
+
+
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="sr-only">Fran time</label>
+                                <input id="fran3" type="text" class="form-control"
+                                       placeholder="Fran Time">
+                            </div>
+
+
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="sr-only">Max cj</label>
+                                <input id="snatch3" type="text" class="form-control"
+                                       placeholder="Max Clean & Jerk">
+                            </div>
+                            <div class="form-inline col-xs-12 col-sm-4">
+                                <span class="shirt-label"><label for="size3"
+                                                                 class="control-label">Shirt size</label></span>
+                                <div id="shirt-size" class="input-group">
+                                    <div class="btn-group radio-button">
+                                        <a class="btn btn-info btn-sm btn-fill active" data-toggle="size3"
+                                           data-title="extra-small">XS</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
+                                           data-title="small">S</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
+                                           data-title="medium">M</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
+                                           data-title="large">L</a>
+                                        <a class="btn btn-info btn-sm btn-fill notActive" data-toggle="size3"
+                                           data-title="extra-large">XL</a>
+                                    </div>
+                                    <input type="hidden" name="size3" id="size3">
+                                </div>
+                            </div>
+                        </div>
+                        <!--<button id="register-button" class="btn btn-info btn-fill" disabled>Register</button>-->
+                        <form id="rx-individual-button" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+                              target="_top" style="display:none;">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="RRWXBVJZWG964">
+                            <input type="hidden" name="custom" value="">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
+
+                        <form id="masters-individual-button" action="https://www.paypal.com/cgi-bin/webscr"
+                              method="post" target="_top" style="display:none;">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="JXFM9X5VM5V5G">
+                            <input type="hidden" name="custom" value="">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
+
+                        <form id="rx-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+                              target="_top" style="display:none;">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="CHRGAJ2XZ4ZD8">
+                            <input type="hidden" name="custom" value="">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
+
+                        <form id="novice-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+                              target="_top" style="display:none;">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="DDJTKLUTGEP6S">
+                            <input type="hidden" name="custom" value="">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
+
+                        <form id="masters-team-button" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+                              target="_top" style="display:none;">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="KGLAJJM6SA7Z2">
+                            <input type="hidden" name="custom" value="">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
                         <!--</form>-->
                     </div>
                 </div>
@@ -365,7 +398,7 @@
                                     <br>
                                 </li>
                                 <li><i class="fa fa-facebook pr-10"></i><a
-                                         class="facebook-link" href="https://www.facebook.com/themoxiegames">facebook</a>
+                                        class="facebook-link" href="https://www.facebook.com/themoxiegames">facebook</a>
                                 </li>
                             </ul>
                         </div>
@@ -413,17 +446,17 @@
 <script src="assets/js/awesome-landing-page.js" type="text/javascript"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
-//    var divisions = [];
-//    $.get("http://leaderboard.dev/api/divisions", function (d) {
-//        divisions = d;
-//
-//        $('#division').change(updateRegisterButtonText);
-//
-//        updateRegisterButtonText();
-//    })
-//        .fail(function () {
-//            alert("Whoops, something went wrong.");
-//        });
+    //    var divisions = [];
+    //    $.get("http://leaderboard.dev/api/divisions", function (d) {
+    //        divisions = d;
+    //
+    //        $('#division').change(updateRegisterButtonText);
+    //
+    //        updateRegisterButtonText();
+    //    })
+    //        .fail(function () {
+    //            alert("Whoops, something went wrong.");
+    //        });
 
     $('.radio-button a').on('click', function () {
         var sel = $(this).data('title');
@@ -438,7 +471,9 @@
             $('.extra-athlete').hide(300);
         } else if (division === 'masters-individual') {
             $('.extra-athlete').hide(300);
-        }  else if (division === 'novice-team') {
+        } else if (division === 'rx-team') {
+            $('.extra-athlete').show(300);
+        } else if (division === 'novice-team') {
             $('.extra-athlete').show(300);
         } else if (division === 'masters-team') {
             $('.extra-athlete').show(300);
@@ -453,42 +488,42 @@
 
     validate();
 
-//    function updateRegisterButtonText() {
-//        var division = $('#division').val();
-//        if (division === 'rx-individual' || division === 'masters-individual') {
-//            $('.extra-athlete').hide(300);
-//            if (division === 'rx-individual') {
-//                if (divisions[0].athlete_count < divisions[0].max_athletes) {
-//                    $("#register-button").html("Register");
-//                } else {
-//                    $("#register-button").html("Sold Out");
-//                }
-//            } else {
-//                if (divisions[1].athlete_count < divisions[1].max_athletes) {
-//                    $("#register-button").html("Register");
-//                } else {
-//                    $("#register-button").html("Sold Out");
-//                }
-//            }
-//        } else {
-//            $('.extra-athlete').show(300);
-//            if (division === 'novice-team') {
-//                if (divisions[2].athlete_count < divisions[2].max_athletes) {
-//                    $("#register-button").html("Register");
-//                } else {
-//                    $("#register-button").html("Sold Out");
-//                }
-//            } else {
-//                if (divisions[3].athlete_count < divisions[3].max_athletes) {
-//                    $("#register-button").html("Register");
-//                } else {
-//                    $("#register-button").html("Sold Out");
-//                }
-//            }
-//        }
-//
-//        validate();
-//    }
+    //    function updateRegisterButtonText() {
+    //        var division = $('#division').val();
+    //        if (division === 'rx-individual' || division === 'masters-individual') {
+    //            $('.extra-athlete').hide(300);
+    //            if (division === 'rx-individual') {
+    //                if (divisions[0].athlete_count < divisions[0].max_athletes) {
+    //                    $("#register-button").html("Register");
+    //                } else {
+    //                    $("#register-button").html("Sold Out");
+    //                }
+    //            } else {
+    //                if (divisions[1].athlete_count < divisions[1].max_athletes) {
+    //                    $("#register-button").html("Register");
+    //                } else {
+    //                    $("#register-button").html("Sold Out");
+    //                }
+    //            }
+    //        } else {
+    //            $('.extra-athlete').show(300);
+    //            if (division === 'novice-team') {
+    //                if (divisions[2].athlete_count < divisions[2].max_athletes) {
+    //                    $("#register-button").html("Register");
+    //                } else {
+    //                    $("#register-button").html("Sold Out");
+    //                }
+    //            } else {
+    //                if (divisions[3].athlete_count < divisions[3].max_athletes) {
+    //                    $("#register-button").html("Register");
+    //                } else {
+    //                    $("#register-button").html("Sold Out");
+    //                }
+    //            }
+    //        }
+    //
+    //        validate();
+    //    }
 
     function validate() {
 //        if ($("#register-button").html() === 'Sold Out') {
@@ -502,6 +537,7 @@
         if (division === 'rx-individual' && $('#name1').val()) {
             $("#rx-individual-button").show();
             $("#masters-individual-button").hide();
+            $("#rx-team-button").hide();
             $("#novice-team-button").hide();
             $("#masters-team-button").hide();
             parameters.name1 = $('#name1').val();
@@ -511,15 +547,35 @@
         } else if (division === 'masters-individual' && $('#name1').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").show();
+            $("#rx-team-button").hide();
             $("#novice-team-button").hide();
             $("#masters-team-button").hide();
             parameters.name1 = $('#name1').val();
             parameters.size1 = $('#size1').val();
             parameters.fran1 = $('#fran1').val();
             parameters.snatch1 = $('#snatch1').val();
-        }  else if (division === 'novice-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
+        } else if (division === 'rx-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").hide();
+            $("#rx-team-button").show();
+            $("#novice-team-button").hide();
+            $("#masters-team-button").hide();
+            parameters.name1 = $('#name1').val();
+            parameters.size1 = $('#size1').val();
+            parameters.fran1 = $('#fran1').val();
+            parameters.snatch1 = $('#snatch1').val();
+            parameters.name2 = $('#name2').val();
+            parameters.size2 = $('#size2').val();
+            parameters.fran2 = $('#fran2').val();
+            parameters.snatch2 = $('#snatch2').val();
+            parameters.name3 = $('#name3').val();
+            parameters.size3 = $('#size3').val();
+            parameters.fran3 = $('#fran3').val();
+            parameters.snatch3 = $('#snatch3').val();
+        } else if (division === 'novice-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
+            $("#rx-individual-button").hide();
+            $("#masters-individual-button").hide();
+            $("#rx-team-button").hide();
             $("#novice-team-button").show();
             $("#masters-team-button").hide();
             parameters.name1 = $('#name1').val();
@@ -537,6 +593,7 @@
         } else if (division === 'masters-team' && $('#name1').val() && $('#name2').val() && $('#name3').val()) {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").hide();
+            $("#rx-team-button").hide();
             $("#novice-team-button").hide();
             $("#masters-team-button").show();
             parameters.name1 = $('#name1').val();
@@ -554,12 +611,13 @@
         } else {
             $("#rx-individual-button").hide();
             $("#masters-individual-button").hide();
+            $("#rx-team-button").hide();
             $("#novice-team-button").hide();
             $("#masters-team-button").hide();
         }
 
         $("input[name='custom']").attr('value', JSON.stringify(parameters));
-        
+
 //        if ((division === 'rx-individual' || division === 'masters-individual' ) && $('#name1').val()) {
 //            $("#register-button").prop('disabled', false);
 //        } else if ($('#name1').val() && $('#name2').val() && $('#name3').val()) {
@@ -572,82 +630,82 @@
     $('.radio-button a:first-of-type').trigger('click');
 </script>
 <!--<script>-->
-    <!--var handler = StripeCheckout.configure({-->
-        <!--key: 'pk_test_yeq1BkNNfbOTwWAGsjY8fqdC',-->
-        <!--image: 'https://stripe.com/img/documentation/checkout/marketplace.png',-->
-        <!--locale: 'auto',-->
-        <!--token: charge,-->
-        <!--allowRememberMe: false-->
-    <!--});-->
+<!--var handler = StripeCheckout.configure({-->
+<!--key: 'pk_test_yeq1BkNNfbOTwWAGsjY8fqdC',-->
+<!--image: 'https://stripe.com/img/documentation/checkout/marketplace.png',-->
+<!--locale: 'auto',-->
+<!--token: charge,-->
+<!--allowRememberMe: false-->
+<!--});-->
 
-    <!--document.getElementById('register-button').addEventListener('click', function (e) {-->
-        <!--// Open Checkout with further options:-->
-        <!--var division = $('#division').val();-->
-        <!--var amount = 6500;-->
-        <!--var description = '';-->
-        <!--if (division === 'novice-team' || division === 'masters-team') {-->
-            <!--amount = 18000;-->
-        <!--}-->
+<!--document.getElementById('register-button').addEventListener('click', function (e) {-->
+<!--// Open Checkout with further options:-->
+<!--var division = $('#division').val();-->
+<!--var amount = 6500;-->
+<!--var description = '';-->
+<!--if (division === 'novice-team' || division === 'masters-team') {-->
+<!--amount = 18000;-->
+<!--}-->
 
-        <!--if (division === 'rx-individual') {-->
-            <!--description = 'Rx Individual Registration';-->
-        <!--} else if (division === 'masters-individual') {-->
-            <!--description = 'Masters Individual Registration';-->
-        <!--} else if (division === 'novice-team') {-->
-            <!--description = 'Novice Team Registration';-->
-        <!--} else if (division === 'masters-team') {-->
-            <!--description = 'Masters Team Registration';-->
-        <!--}-->
+<!--if (division === 'rx-individual') {-->
+<!--description = 'Rx Individual Registration';-->
+<!--} else if (division === 'masters-individual') {-->
+<!--description = 'Masters Individual Registration';-->
+<!--} else if (division === 'novice-team') {-->
+<!--description = 'Novice Team Registration';-->
+<!--} else if (division === 'masters-team') {-->
+<!--description = 'Masters Team Registration';-->
+<!--}-->
 
-        <!--handler.open({-->
-            <!--name: 'The Moxie Games',-->
-            <!--description: description,-->
-            <!--zipCode: true,-->
-            <!--amount: amount-->
-        <!--});-->
-        <!--e.preventDefault();-->
-    <!--});-->
+<!--handler.open({-->
+<!--name: 'The Moxie Games',-->
+<!--description: description,-->
+<!--zipCode: true,-->
+<!--amount: amount-->
+<!--});-->
+<!--e.preventDefault();-->
+<!--});-->
 
-    <!--// Close Checkout on page navigation:-->
-    <!--window.addEventListener('popstate', function () {-->
-        <!--handler.close();-->
-    <!--});-->
+<!--// Close Checkout on page navigation:-->
+<!--window.addEventListener('popstate', function () {-->
+<!--handler.close();-->
+<!--});-->
 
-    <!--function charge(token) {-->
-        <!--// You can access the token ID with `token.id`.-->
-        <!--// Get the token ID to your server-side code for use.-->
-        <!--var division = $('#division').val();-->
-        <!--if (division === 'rx-individual') {-->
-            <!--divisionId = 1;-->
-        <!--} else if (division === 'masters-individual') {-->
-            <!--divisionId = 2;-->
-        <!--} else if (division === 'novice-team') {-->
-            <!--divisionId = 3;-->
-        <!--} else if (division === 'masters-team') {-->
-            <!--divisionId = 4;-->
-        <!--}-->
+<!--function charge(token) {-->
+<!--// You can access the token ID with `token.id`.-->
+<!--// Get the token ID to your server-side code for use.-->
+<!--var division = $('#division').val();-->
+<!--if (division === 'rx-individual') {-->
+<!--divisionId = 1;-->
+<!--} else if (division === 'masters-individual') {-->
+<!--divisionId = 2;-->
+<!--} else if (division === 'novice-team') {-->
+<!--divisionId = 3;-->
+<!--} else if (division === 'masters-team') {-->
+<!--divisionId = 4;-->
+<!--}-->
 
-        <!--var parameters = {'token': token};-->
-        <!--parameters.name1 = $('#name1').val();-->
-        <!--parameters.size1 = $('#size1').val();-->
-        <!--parameters.name2 = $('#name2').val();-->
-        <!--parameters.size2 = $('#size2').val();-->
-        <!--parameters.name3 = $('#name3').val();-->
-        <!--parameters.size3 = $('#size3').val();-->
+<!--var parameters = {'token': token};-->
+<!--parameters.name1 = $('#name1').val();-->
+<!--parameters.size1 = $('#size1').val();-->
+<!--parameters.name2 = $('#name2').val();-->
+<!--parameters.size2 = $('#size2').val();-->
+<!--parameters.name3 = $('#name3').val();-->
+<!--parameters.size3 = $('#size3').val();-->
 
-        <!--$("#register-button").html("Registering, please wait...");-->
-        <!--$("#register-button").prop('disabled', true);-->
+<!--$("#register-button").html("Registering, please wait...");-->
+<!--$("#register-button").prop('disabled', true);-->
 
-        <!--$.post("http://leaderboard.dev/api/divisions/" + divisionId + "/athlete", parameters, function () {-->
+<!--$.post("http://leaderboard.dev/api/divisions/" + divisionId + "/athlete", parameters, function () {-->
 <!--//            alert( JSON.stringify(token) );-->
-            <!--$("#register-button").html("Thank you for registering!");-->
+<!--$("#register-button").html("Thank you for registering!");-->
 <!--//            $("#register-button").prop('disabled', false);-->
-        <!--})-->
-        <!--.fail(function () {-->
-            <!--alert("Whoops, something went wrong.");-->
-            <!--$("#register-button").html("Register");-->
-            <!--$("#register-button").prop('disabled', false);-->
-        <!--});-->
-    <!--}-->
+<!--})-->
+<!--.fail(function () {-->
+<!--alert("Whoops, something went wrong.");-->
+<!--$("#register-button").html("Register");-->
+<!--$("#register-button").prop('disabled', false);-->
+<!--});-->
+<!--}-->
 <!--</script>-->
 </html>
